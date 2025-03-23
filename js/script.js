@@ -281,4 +281,16 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.removeItem('passwordHistory');
     updatePasswordHistory();
   }
+
+  // 添加Hero区域按钮功能
+  const heroGenerateButton = document.getElementById('heroGenerateButton');
+  if (heroGenerateButton) {
+    heroGenerateButton.addEventListener('click', () => {
+      generatePassword();
+      // 平滑滚动到密码结果区域
+      document.querySelector('.password-display').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    });
+  }
 }); 
